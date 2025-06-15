@@ -1,0 +1,60 @@
+INSERT INTO area (area_nome, area_descricao) VALUES
+('Desenvolvimento', 'Área de desenvolvimento de software'),
+('Design', 'Área de design gráfico e interfaces'),
+('Marketing', 'Área de marketing e mídias digitais'),
+('Suporte', 'Área de atendimento e suporte técnico'),
+('RH', 'Área de recursos humanos e gestão de pessoas');
+
+
+
+INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, area_area_id) VALUES
+('João Silva', '1990-01-01', '12345678900', '(11)90000-0001', 1),
+('Maria Oliveira', '1985-05-15', '12345678901', '(11)90000-0002', 2),
+('Carlos Souza', '1992-07-10', '12345678902', '(11)90000-0003', 1),
+('Ana Paula', '1995-12-20', '12345678903', '(11)90000-0004', 3),
+('Bruno Costa', '1998-03-30', '12345678904', '(11)90000-0005', 4),
+('Fernanda Lima', '1987-08-14', '12345678905', '(11)90000-0006', 2),
+('Lucas Mendes', '1991-09-25', '12345678906', '(11)90000-0007', 1),
+('Patrícia Rocha', '1993-11-05', '12345678907', '(11)90000-0008', 3),
+('Gabriel Nunes', '1996-04-18', '12345678908', '(11)90000-0009', 5),
+('Juliana Matos', '1989-10-07', '12345678909', '(11)90000-0010', 2),
+('Ricardo Leal', '1994-06-22', '12345678910', '(11)90000-0011', 4),
+('Aline Borges', '1997-01-12', '12345678911', '(11)90000-0012', 1),
+('Eduardo Peixoto', '1986-07-01', '12345678912', '(11)90000-0013', 5),
+('Camila Freitas', '1999-12-31', '12345678913', '(11)90000-0014', 3),
+('Marcos Pinto', '1988-09-19', '12345678914', '(11)90000-0015', 2),
+('Tatiane Ribeiro', '1990-02-08', '12345678915', '(11)90000-0016', 5),
+('Thiago Lopes', '1992-05-23', '12345678916', '(11)90000-0017', 1),
+('Simone Cardoso', '1984-11-11', '12345678917', '(11)90000-0018', 4),
+('André Vieira', '1993-03-27', '12345678918', '(11)90000-0019', 3),
+('Laura Martins', '1996-08-16', '12345678919', '(11)90000-0020', 2);
+
+
+
+
+INSERT INTO vagas (vagas_nome, vagas_descricao, area_vagas_id) VALUES
+('Dev Front-end', 'Trabalhar com HTML, CSS e JS', 1),
+('Dev Back-end', 'APIs em Node.js e bancos de dados', 1),
+('Dev Full Stack', 'Conhecimento em front e back-end', 1),
+('UX Designer', 'Desenhar experiências intuitivas', 2),
+('UI Designer', 'Criar interfaces modernas', 2),
+('Analista de Mídias', 'Gerir redes sociais', 3),
+('Redator Publicitário', 'Criação de conteúdo para campanhas', 3),
+('Suporte N1', 'Atendimento técnico inicial', 4),
+('Suporte N2', 'Resolução de problemas técnicos', 4),
+('Recrutador', 'Buscar e entrevistar candidatos', 5),
+('Analista de RH', 'Gestão de pessoas e clima organizacional', 5),
+('Desenvolvedor Java', 'Projetos em Java Spring Boot', 1),
+('Desenvolvedor Python', 'Automação e back-end com Flask', 1),
+('Designer Gráfico', 'Material publicitário e identidade visual', 2),
+('Social Media', 'Posts, anúncios e relatórios', 3),
+('Copywriter', 'Textos persuasivos para campanhas', 3),
+('Help Desk', 'Atendimento e registro de chamados', 4),
+('Analista de Treinamento', 'Capacitação de novos colaboradores', 5),
+('DevOps', 'Automatização de deploy e CI/CD', 1),
+('QA Tester', 'Testes automatizados e manuais', 1),
+('Ilustrador', 'Criação de ilustrações e vetores', 2),
+('Planner', 'Planejamento estratégico de campanhas', 3),
+('Coordenador de Suporte', 'Gestão de equipe técnica', 4),
+('Psicólogo Organizacional', 'Apoio emocional interno', 5),
+('Tech Recruiter', 'Seleção técnica de desenvolvedores', 5);
