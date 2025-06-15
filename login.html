@@ -4,8 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            background-color: #d04c00;
+        }
+
+        button {
+            width: 107%;
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #4f88b1;
+        }
+
+        p {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     
+    <h1>Login</h1>
+
+    <form action="" name="login">
+
+        Usuário: <br>
+        <input type="text" name="usuario" required> <br><br>
+
+        Senha: <br>
+        <input type="password" name="senha" required> <br><br>
+
+        <button type="submit"><a href="index.html">Entrar</a></button>
+    </form>
+
+
+    <p>Não tem uma conta? 
+        <a href="cadastro.html">Cadastre-se</a>
+    </p>
+
+    <p>Esqueceu a senha? 
+        <a href="index.html">Vai ter que lembrar</a>
+    </p>
+
+    <p>Voltar para a 
+        <a href="index.html">página inicial</a>
+    </p>
+
 </body>
 </html>
