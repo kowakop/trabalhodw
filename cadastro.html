@@ -1,27 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: large;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        input[type="text"], input[type="date"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            background-color: #d04c00;
+        }
+
+
+        button {
+            width: 108%;
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            margin-top: 50px;
+
+        }
+        
+        button:hover {
+            background-color: #4f88b1;
+        }
+
+        p {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin-top: 20px;
+        }
+
+        a {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+
+    </style>
 </head>
 <body>
     <h1>Cadastro</h1>
     <form action="" name="cadastro">
-        Nome: <br>
-        <input type="text" name="nome"> <br><br>
-        Data de nascimento: <br>
-        <input type="date" name="idade"> <br><br>
-        CPF: <br>
-        <input type="text" name="cpf"> <br><br>
-        Telefone: <br>
-        <input type="text" name="telefone"> <br><br>
+
+        Nome:
+        <input type="text" name="nome" required>
+
+        Data de nascimento: 
+        <input type="date" name="idade" required>
+
+        CPF: 
+        <input type="text" name="cpf" required>
+
+        Telefone:
+        <input type="text" name="telefone" required>
+
         Foto:
         <input type="file" name="foto">
 
-        
+        <button type="submit">Cadastrar</button>
+
+        <p>Já tem uma conta? 
+            <a href="login.html">Faça login</a>
+        </p>
+
     </form>
 </body>
 </html>
