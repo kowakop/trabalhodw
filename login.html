@@ -9,10 +9,11 @@
     <style>
         body {
             background-color: #ffffff;
+            padding-top: 100px;
         }
 
         h1 {
-            margin-top: 100px;
+            
             text-align: center;
             color: rgb(0, 0, 0);
             font-size: large;
@@ -67,36 +68,49 @@
             color: rgb(0, 0, 0);
             text-decoration: underline;
         }
+
+        #folha {
+            background-color: lightgray;
+            border-radius: 15px;
+            margin: 0 auto;
+            width: 27vw;
+            height: 400px;
+            padding-top: 30px;
+        }
     </style>
 </head>
 <body>
-    
-    <h1>Login</h1>
+        <div id="folha">
 
-    <form action="" name="login">
+            <h1>Login</h1>
+            
+            <form action="" name="login">
+                
+                Usuário:
+                <input type="text" name="usuario" required> 
+            
+                Senha: 
+                <input type="password" name="senha" required> 
+                
+                <button type="submit"><a href="index.html">Entrar</a></button>
+            
+            </form>
+        
+        
+            <p>Não tem uma conta? 
+                <a href="cadastro.html">Cadastre-se</a>
+            </p>
+            
+            <p>Esqueceu a senha? 
+                <a href="index.html">Vai ter que lembrar</a>
+            </p>
+            
+            <p>Voltar para a 
+                <a href="index.html">página inicial</a>
+            </p>
+        </div>
+        
 
-        Usuário:
-        <input type="text" name="usuario" required> 
-
-        Senha: 
-        <input type="password" name="senha" required> 
-
-        <button type="submit"><a href="index.html">Entrar</a></button>
-
-    </form>
-
-
-    <p>Não tem uma conta? 
-        <a href="cadastro.html">Cadastre-se</a>
-    </p>
-
-    <p>Esqueceu a senha? 
-        <a href="index.html">Vai ter que lembrar</a>
-    </p>
-
-    <p>Voltar para a 
-        <a href="index.html">página inicial</a>
-    </p>
 
 </body>
 </html>
