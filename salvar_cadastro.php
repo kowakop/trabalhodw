@@ -28,7 +28,7 @@
     // letra s -> varchar, date, datetime, char
     // letra i -> int
     // letra d -> float, decimal
-    mysqli_stmt_bind_param($comando, 'sssss', $nome, $nascimento, $nacionalidade);
+    mysqli_stmt_bind_param($comando, 'sssss', $nome, $idade, $cpf, $telefone, $foto);
 
     mysqli_stmt_execute($comando);
 
