@@ -1,3 +1,11 @@
+<?php
+include "conexao.php";
+
+// Consulta para buscar todas as áreas cadastradas
+$sql = "SELECT area_id, area_nome FROM area ORDER BY area_nome";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -110,6 +118,7 @@
 
         <p id="pp">Já tem uma conta? 
             <a href="login.html">Faça login</a>
+
         </p>
         </div>
 

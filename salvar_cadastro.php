@@ -7,8 +7,8 @@
     $cpf = $_POST['cpf'];
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
+    $id=$_POST
 
-    $area_area_id = $_POST['area_area_id'];
     
     $nome_arquivo = $_FILES['foto']['name'];
     $caminho_temporario = $_FILES['foto']['tmp_name'];
@@ -25,13 +25,13 @@
     // move a foto para o servidor
     move_uploaded_file($caminho_temporario, $caminho_destino);
 
-    $sql = "INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, usuario_senha, usuario_foto, area_area_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, usuario_senha, usuario_foto, id_cara) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
 
     // letra s -> varchar, date, datetime, char
     // letra i -> int
     // letra d -> float, decimal    
-    mysqli_stmt_bind_param($comando, 'sssssss', $nome, $idade, $cpf, $telefone, $senha, $caminho_destino, $area_area_id);
+    mysqli_stmt_bind_param($comando, 'ssssssi', $nome, $idade, $cpf, $telefone, $senha, $caminho_destino,$id);
 
     mysqli_stmt_execute($comando);
 
