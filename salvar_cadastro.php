@@ -22,7 +22,7 @@
     // move a foto para o servidor
     move_uploaded_file($caminho_temporario, $caminho_destino);
 
-    $sql = "INSERT INTO cadastro (nome, idade, cpf, telefone, foto) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, usuario_foto) VALUES (?, ?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
 
     // letra s -> varchar, date, datetime, char
