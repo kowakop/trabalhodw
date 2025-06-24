@@ -5,7 +5,7 @@
     $nome = $_POST['nome'];
     $idade = $_POST['idade'];
     $cpf = $_POST['cpf'];
-    $telefone = $_POST['telefone']
+    $telefone = $_POST['telefone'];
     
     $nome_arquivo = $_FILES['foto']['name'];
     $caminho_temporario = $_FILES['foto']['tmp_name'];
