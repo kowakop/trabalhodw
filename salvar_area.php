@@ -17,5 +17,5 @@
 
     mysqli_stmt_close($comando);
 
-    header("Location: index.php");
+    header("Location: cadastro.html");
 ?>

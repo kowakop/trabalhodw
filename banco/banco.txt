@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema bd_dw
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema bd_dw
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `bd_dw` DEFAULT CHARACTER SET utf8 ;
+USE `bd_dw` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`area`
+-- Table `bd_dw`.`area`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`area` (
+CREATE TABLE IF NOT EXISTS `bd_dw`.`area` (
   `area_id` INT NOT NULL AUTO_INCREMENT,
   `area_nome` VARCHAR(45) NOT NULL,
   `area_descricao` VARCHAR(255) NOT NULL,
@@ -30,21 +30,22 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`usuario`
+-- Table `bd_dw`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
+CREATE TABLE IF NOT EXISTS `bd_dw`.`usuario` (
   `usuario_id` INT NOT NULL AUTO_INCREMENT,
   `usuario_nome` VARCHAR(45) NOT NULL,
   `usuario_idade` DATE NOT NULL,
   `usuario_cpf` CHAR(15) NOT NULL,
   `usuario_telefone` CHAR(14) NOT NULL,
+  `usuario_senha` VARCHAR(255),
   `usuario_foto` VARCHAR(255),
-  `area_area_id` INT NOT NULL,
+  `area_area_id` INT,
   PRIMARY KEY (`usuario_id`),
   INDEX `fk_usuario_area_idx` (`area_area_id` ASC) VISIBLE,
   CONSTRAINT `fk_usuario_area`
     FOREIGN KEY (`area_area_id`)
-    REFERENCES `mydb`.`area` (`area_id`)
+    REFERENCES `bd_dw`.`area` (`area_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -52,9 +53,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`vagas`
+-- Table `bd_dw`.`vagas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`vagas` (
+CREATE TABLE IF NOT EXISTS `bd_dw`.`vagas` (
   `vagas_id` INT NOT NULL AUTO_INCREMENT,
   `vagas_descricao` VARCHAR(255) NOT NULL,
   `area_vagas_id` INT NOT NULL,
@@ -63,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`vagas` (
   INDEX `fk_vagas_area1_idx` (`area_vagas_id` ASC) VISIBLE,
   CONSTRAINT `fk_vagas_area1`
     FOREIGN KEY (`area_vagas_id`)
-    REFERENCES `mydb`.`area` (`area_id`)
+    REFERENCES `bd_dw`.`area` (`area_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
