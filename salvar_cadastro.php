@@ -7,7 +7,12 @@
     $cpf = $_POST['cpf'];
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
-    $id=$_POST
+    $email = $_POST['email'];
+    $area_id=$_POST ?? null; 
+    
+    if (!str_ends_with($email, '@gmail.com')) {
+        die("Erro: O e-mail deve ser do domínio @gmail.com. Por favor, clique em voltar e insira novamente. <br><a href='javascript:history.back()'>Voltar</a>");
+    }
 
     
     $nome_arquivo = $_FILES['foto']['name'];
@@ -25,17 +30,17 @@
     // move a foto para o servidor
     move_uploaded_file($caminho_temporario, $caminho_destino);
 
-    $sql = "INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, usuario_senha, usuario_foto, id_cara) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, usuario_senha, usuario_foto, usuario_email, area_area_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
 
     // letra s -> varchar, date, datetime, char
     // letra i -> int
     // letra d -> float, decimal    
-    mysqli_stmt_bind_param($comando, 'ssssssi', $nome, $idade, $cpf, $telefone, $senha, $caminho_destino,$id);
+    mysqli_stmt_bind_param($comando, 'sssssssi', $nome, $idade, $cpf, $telefone, $senha, $caminho_destino, $email, $area_id);
 
     mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
 
-    header("Location: index.php");
+    header("Location: index.html");
 ?>

@@ -2,9 +2,26 @@
 
         require_once "conexao.php";
 
-        // SELECT * FROM tb_livro;
-        $sql = "SELECT * FROM vaga";
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+
+        $sql = "SELECT * FROM bd_dw";
         $comando = mysqli_prepare($conexao, $sql);
+
+        if {
+
+
+        }
+        else{
+            if{
+
+            }
+
+            else{
+                
+            }
+        }
 
         mysqli_stmt_execute($comando);
 

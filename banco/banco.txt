@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `bd_dw`.`usuario` (
   `usuario_nome` VARCHAR(45) NOT NULL,
   `usuario_idade` DATE NOT NULL,
   `usuario_cpf` CHAR(15) NOT NULL,
+  `usuario_email` VARCHAR(255) NOT NULL,
   `usuario_telefone` CHAR(14) NOT NULL,
   `usuario_senha` VARCHAR(255),
   `usuario_foto` VARCHAR(255),

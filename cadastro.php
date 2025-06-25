@@ -1,10 +1,4 @@
-<?php
-include "conexao.php";
 
-// Consulta para buscar todas as áreas cadastradas
-$sql = "SELECT area_id, area_nome FROM area ORDER BY area_nome";
-$result = $conn->query($sql);
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -102,6 +96,9 @@ $result = $conn->query($sql);
         <p>Data de nascimento:</p> 
         <input type="date" name="idade" required>
 
+        <p>Email:</p>
+        <input type="text" name="email" required>
+
         <p>CPF:</p>
         <input type="text" name="cpf" required>
 
@@ -123,5 +120,13 @@ $result = $conn->query($sql);
         </div>
 
     </form>
+
+    <?php
+// include "conexao.php";
+
+// Consulta para buscar todas as áreas cadastradas
+// $sql = "SELECT area_id, area_nome FROM area ORDER BY area_nome";
+// $result = $conn->query($sql);
+?>
 </body>
 </html>
