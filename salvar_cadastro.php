@@ -17,33 +17,19 @@
     // Suponha que $userProfilePicture seja o caminho da imagem do perfil do usuário,
 // ou um valor que indica se ele tem uma foto (ex: nome do arquivo no DB, ou null/empty)
 
-$userProfilePicture = getUserProfilePictureFromDatabase($userId); // Função de exemplo para buscar a foto do DB
+ // Função de exemplo para buscar a foto do DB
 
-$defaultImagePath = ''; // Altere para o caminho real da sua imagem padrão
+$imgperil_padrao = 'imagens/perfil.png'; // Altere para o caminho real da sua imagem padrão
 
-if (empty($userProfilePicture) || !file_exists($userProfilePicture)) {
-    // Se o usuário não tem foto ou o arquivo não existe, use a imagem padrão
-    $imageToDisplay = $defaultImagePath;
-} else {
-    // Se o usuário tem foto, use a foto dele
-    $imageToDisplay = $userProfilePicture;
+if (!empty($_FILES['foto']['name'])) {
+    $pasta = "imagens/";
+    $nome_arquivo = uniqid() . "_" . basename($_FILES['foto']['name']);
+    $caminho = $pasta . $nome_arquivo;
+    move_uploaded_file($_FILES['foto']['tmp_name'], $caminho);
 }
-
-    
-    $nome_arquivo = $_FILES['foto']['name'];
-    $caminho_temporario = $_FILES['foto']['tmp_name'];
-
-    //pegar a extensão do arquivo
-    $extensao = pathinfo($nome_arquivo, PATHINFO_EXTENSION);
-
-    //gerar um novo nome
-    $novo_nome = uniqid() . "." . $extensao;
-
-    // lembre-se de criar a pasta e de ajustar as permissões.
-    $caminho_destino = "fotos/" . $novo_nome;
-
-    // move a foto para o servidor
-    move_uploaded_file($caminho_temporario, $caminho_destino);
+else {
+    $caminho = $imgperil_padrao;
+}
 
     $sql = "INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, usuario_senha, usuario_foto, usuario_email, area_area_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
@@ -51,7 +37,7 @@ if (empty($userProfilePicture) || !file_exists($userProfilePicture)) {
     // letra s -> varchar, date, datetime, char
     // letra i -> int
     // letra d -> float, decimal    
-    mysqli_stmt_bind_param($comando, 'sssssssi', $nome, $idade, $cpf, $telefone, $senha, $caminho_destino, $email, $area_id);
+    mysqli_stmt_bind_param($comando, 'sssssssi', $nome, $idade, $cpf, $telefone, $senha, $caminho, $email, $area_id);
 
     mysqli_stmt_execute($comando);
 

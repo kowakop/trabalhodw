@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de vaga</title>
+    <title>Cadastro de Trabalho</title>
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="reset.css">
-   <style>
+    <style>
+
         body {
             background-color: #ffffff;
             padding-top: 100px;
+            
         }
         h1 {
             text-align: center;
@@ -23,8 +25,9 @@
             width: 300px;
             margin: 0 auto;
             padding-top: 20px;
+            
         }
-        input[type="text"] {
+        .texto{
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -32,7 +35,6 @@
             border: none;
             background-color: #d04c00;
         }
-        
         button {
             width: 108%;
             padding: 10px;
@@ -50,8 +52,8 @@
             width: 27vw;
             height: 350px;
             padding-top: 30px;
-
         }
+
         p {
             text-align: center;
             color: rgb(0, 0, 0);
@@ -66,29 +68,30 @@
     </style>
 </head>
 <body>
-<div id="folha">
+    <div id="folha">
 
-    <h1>Trabalho</h1>
+    <h1>Cadastro </h1>
 
-    <form action="salvar_area.php" method="post" enctype="multipart/form-data">
+    <form action="salvar_area.php">
 
-        Área da vaga: 
-        <input type="text" name="nome"> 
+        Área de trabalho: 
+        <input type="text" name="area" class="texto" required> 
 
         Descrição: 
-        <input type="text" name="descricao">
+        <input type="text" name="descricao" class="texto"required> 
 
-        <button type="submit">cadastro vaga</button>
+        <button type="submit" >cadastrar</button>
 
         <p>Ir para 
-            <a href="cadastro_vaga.html">Cadastro de Vaga</a>
+            <a href="cadastro_vaga.php">Cadastro de vaga</a>
         </p> 
 
         <p>Voltar para 
-            <a href="principal.html">Página inicial</a>
+            <a href="principal.php">Página inicial</a>
+            
         </p>
+    </div>
 
-        </form>
-</div>
+    </form>
 </body>
 </html>

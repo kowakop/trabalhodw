@@ -114,7 +114,7 @@
         <button type="submit">Cadastrar</button>
 
         <p id="pp">Já tem uma conta? 
-            <a href="login.html">Faça login</a>
+            <a href="login.php">Faça login</a>
 
         </p>
         </div>

@@ -85,7 +85,7 @@
 
             <h1>Login</h1>
             
-            <form action="" name="login">
+            <form action="verificar_logi.php" name="login" method="POST">
                 
                 <p>Email:</p>
                 <input type="text" name="email" required> 
@@ -93,21 +93,21 @@
                 <p>Senha:</p> 
                 <input type="password" name="senha" required> 
                 
-                <button type="submit"><a href="principal.html">Entrar</a></button>
+                <button type="submit">Entrar</button>
             
             </form>
         
         
             <p>Não tem uma conta? 
-                <a href="cadastro.html">Cadastre-se</a>
+                <a href="cadastro.php">Cadastre-se</a>
             </p>
             
             <p>Esqueceu a senha? 
-                <a href="index.html">Vai ter que lembrar</a>
+                <a href="index.php">Vai ter que lembrar</a>
             </p>
             
             <p>Voltar para a 
-                <a href="index.html">página inicial</a>
+                <a href="index.php">página inicial</a>
             </p>
         </div>
         
