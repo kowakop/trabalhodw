@@ -11,7 +11,7 @@
     $area_id=$_POST ?? null; 
     
     if (!str_ends_with($email, '@gmail.com')) {
-        die("Erro: O e-mail deve ser do domínio @gmail.com. Por favor, clique em voltar e insira novamente. <br><a href='javascript:history.back()'>Voltar</a>");
+        die("Erro: O e-mail deve ser do domínio @gmail.com. Por favor, clique em voltar e insira novamente. <br><a href='cadastro.php'>Voltar</a>");
     }
 
     
