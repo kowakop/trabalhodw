@@ -5,7 +5,7 @@
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
 
-    $sql = "INSERT INTO area (area_nome, area_descricao) VALUES (?, ?)";
+    $sql = "INSERT INTO vagas (vagas_nome, vagas_descricao) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
 
     // letra s -> varchar, date, datetime, char
