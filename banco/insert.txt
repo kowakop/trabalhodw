@@ -7,27 +7,19 @@ INSERT INTO area (area_nome, area_descricao) VALUES
 
 
 
-INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_telefone, area_area_id) VALUES
-('João Silva', '1990-01-01', '12345678900', '(11)90000-0001', 1),
-('Maria Oliveira', '1985-05-15', '12345678901', '(11)90000-0002', 2),
-('Carlos Souza', '1992-07-10', '12345678902', '(11)90000-0003', 1),
-('Ana Paula', '1995-12-20', '12345678903', '(11)90000-0004', 3),
-('Bruno Costa', '1998-03-30', '12345678904', '(11)90000-0005', 4),
-('Fernanda Lima', '1987-08-14', '12345678905', '(11)90000-0006', 2),
-('Lucas Mendes', '1991-09-25', '12345678906', '(11)90000-0007', 1),
-('Patrícia Rocha', '1993-11-05', '12345678907', '(11)90000-0008', 3),
-('Gabriel Nunes', '1996-04-18', '12345678908', '(11)90000-0009', 5),
-('Juliana Matos', '1989-10-07', '12345678909', '(11)90000-0010', 2),
-('Ricardo Leal', '1994-06-22', '12345678910', '(11)90000-0011', 4),
-('Aline Borges', '1997-01-12', '12345678911', '(11)90000-0012', 1),
-('Eduardo Peixoto', '1986-07-01', '12345678912', '(11)90000-0013', 5),
-('Camila Freitas', '1999-12-31', '12345678913', '(11)90000-0014', 3),
-('Marcos Pinto', '1988-09-19', '12345678914', '(11)90000-0015', 2),
-('Tatiane Ribeiro', '1990-02-08', '12345678915', '(11)90000-0016', 5),
-('Thiago Lopes', '1992-05-23', '12345678916', '(11)90000-0017', 1),
-('Simone Cardoso', '1984-11-11', '12345678917', '(11)90000-0018', 4),
-('André Vieira', '1993-03-27', '12345678918', '(11)90000-0019', 3),
-('Laura Martins', '1996-08-16', '12345678919', '(11)90000-0020', 2);
+-- Inserir múltiplos usuários com data de nascimento e sem foto
+INSERT INTO usuario (usuario_nome, usuario_idade, usuario_cpf, usuario_email, usuario_telefone, usuario_senha, usuario_foto, area_area_id)
+VALUES
+('João Silva', '1997-05-14', '123.456.789-00', 'joao.silva@email.com', '(11)91234-5678', 'senha123', '', 3),
+('Maria Oliveira', '1989-11-22', '234.567.890-11', 'maria.oliveira@email.com', '(21)98765-4321', 'senha456', '', 1),
+('Carlos Souza', '2003-08-03', '345.678.901-22', 'carlos.souza@email.com', '(31)99876-5432', 'senha789', '', 4),
+('Fernanda Costa', '1998-12-16', '456.789.012-33', 'fernanda.costa@email.com', '(41)94567-8910', 'senha321', '', 2),
+('Pedro Santos', '1995-07-20', '567.890.123-44', 'pedro.santos@email.com', '(51)95432-1098', 'senha654', '', 5),
+('Ana Paula', '1997-02-11', '678.901.234-55', 'ana.paula@email.com', '(61)99877-6655', 'senha987', '', 1),
+('Luiz Almeida', '1984-01-28', '789.012.345-66', 'luiz.almeida@email.com', '(81)95544-3322', 'senha1234', '', 3),
+('Camila Rocha', '2002-09-09', '890.123.456-77', 'camila.rocha@email.com', '(91)94455-2211', 'senha5678', '', 2),
+('Felipe Pereira', '1996-04-18', '901.234.567-88', 'felipe.pereira@email.com', '(41)93322-4444', 'senha1111', '', 4),
+('Juliana Martins', '1993-10-04', '012.345.678-99', 'juliana.martins@email.com', '(31)99887-6655', 'senha4321', '', 5);
 
 
 

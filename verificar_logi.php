@@ -23,6 +23,9 @@
             header("Location: login.php");
             exit();
         } 
+
+        setcookie("usuario_nome", $bd_dados["usuario_nome"], time() + 3600, "/");
+        
         header("Location: principal.php");
 
 ?>

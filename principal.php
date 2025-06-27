@@ -1,3 +1,8 @@
+<?php
+// Define a variável $usuario_nome se o cookie 'usuario_nome' existir
+$usuario_nome = isset($_COOKIE['usuario_nome']) ? $_COOKIE['usuario_nome'] : '';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -95,18 +100,28 @@
         </style>
     </head>
 
-    <nav id="nav">
-
-        <button id="botao_vaga" class="btn">
-            <a class="botao_nav" href="cadastro_area.php">Criar nova Vaga</a>
-        </button>
-
-         <button id="botao_voltar" class="btn">
-            <a class="botao_nav" href="index.html">Voltar</a>
-        </button>
-
-    </nav>
     <body>
+
+        <nav id="nav">
+    
+            <button id="botao_vaga" class="btn">
+                <a class="botao_nav" href="cadastro_area.php">Criar nova Vaga</a>
+            </button>
+
+            <button id="botao_voltar" class="btn">
+                <a class="botao_nav" href="sair.php">Sair</a>
+            </button>
+    
+            <?php 
+            
+            if ($usuario_nome) { 
+            ?>
+                <div style="color: white; padding: 15px;">
+                    Olá, <?php echo htmlspecialchars($usuario_nome); ?>
+                </div>
+            <?php } ?>
+
+        </nav>
 
         <!-- importado do bootstrap -->
         <!-- única parte responsiva desse site (╥﹏╥) -->
@@ -135,7 +150,7 @@
             echo "<div class='row row-cols-1 row-cols-md-3 g-4'>";
             echo "  <div class='col'>";
             echo "      <div class='card h-100' style='width: 300px;'>";
-            echo "          <img src='imagens/teste.jpeg' class='card-img-top'>";
+            echo "          <img src='imagens/foto_trabalho.jpeg' class='card-img-top'>";
             echo "          <div class='card-body'>";
             echo "              <h5 class='card-title'>$nome</h5>";
             echo "              <p class='card-text'>$descricao</p>";
