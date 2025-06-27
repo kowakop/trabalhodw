@@ -90,6 +90,7 @@
                 display: flex;
                 justify-content: center;
                 gap: 50px;
+                flex-wrap: wrap;
             }
         </style>
     </head>
