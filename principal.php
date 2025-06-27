@@ -56,11 +56,49 @@
                 display: block;
             }
 
+            #botao_vaga{
+                height: 50px;
+                margin: 10px;
+                border-radius: 10px;
+                background-color: white;
+                text-align: right;
+            }
 
+            #botao_voltar{
+                height: 50px;
+                margin: 10px;
+                border-radius: 10px;
+                background-color: white;
+                text-align: right;
+            }
+
+            .botao_nav{
+                text-decoration: none;
+                color: black;
+            }
+
+            #nav{
+                text-align: right;
+                background-color: #d04c00;
+                height: 75px;
+                display: flex;
+                flex-wrap:wrap;
+            }
 
         </style>
     </head>
 
+    <nav id="nav">
+
+        <button id="botao_vaga" class="btn">
+            <a class="botao_nav" href="cadastro_area.php">Criar nova Vaga</a>
+        </button>
+
+         <button id="botao_voltar" class="btn">
+            <a class="botao_nav" href="index.html">Voltar</a>
+        </button>
+
+    </nav>
     <body>
 
         <!-- importado do bootstrap -->
@@ -100,7 +138,7 @@
                         <a href="#" class="btn btn-light">Solicitar Vaga</a>
                     </div>
                 </div>
-                <button> <a href="index.html">Voltar</a></button>
+               
             </div>
         </div>
     </body>

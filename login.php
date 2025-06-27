@@ -78,6 +78,10 @@
             height: 500px;
             padding-top: 30px;
         }
+
+        #botao_entrar{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -93,7 +97,7 @@
                 <p>Senha:</p> 
                 <input type="password" name="senha" required> 
                 
-                <button type="submit">Entrar</button>
+                <button type="submit"><span id="botao_entrar">Entrar</span></button>
             
             </form>
         

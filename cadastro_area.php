@@ -72,9 +72,9 @@
 
     <h1>Cadastro </h1>
 
-    <form action="salvar_area.php">
+    <form action="salvar_area.php" method="post">
 
-        Área de trabalho: 
+        Área da Vaga: 
         <input type="text" name="area" class="texto" required> 
 
         Descrição: 

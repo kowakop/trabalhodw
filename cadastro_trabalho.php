@@ -72,7 +72,7 @@
 
     <form action="salvar_trabalho.php" method="post" enctype="multipart/form-data">
 
-        Área da vaga: 
+        Área de trabalho: 
         <input type="text" name="nome"> 
 
         Descrição: 

@@ -14,18 +14,13 @@
         die("Erro: O e-mail deve ser do domínio @gmail.com. Por favor, clique em voltar e insira novamente. <br><a href='cadastro.php'>Voltar</a>");
     }
 
-    // Suponha que $userProfilePicture seja o caminho da imagem do perfil do usuário,
-// ou um valor que indica se ele tem uma foto (ex: nome do arquivo no DB, ou null/empty)
-
- // Função de exemplo para buscar a foto do DB
-
 $imgperil_padrao = 'imagens/perfil.png'; // Altere para o caminho real da sua imagem padrão
 
 if (!empty($_FILES['foto']['name'])) {
     $pasta = "imagens/";
     $nome_arquivo = uniqid() . "_" . basename($_FILES['foto']['name']);
     $caminho = $pasta . $nome_arquivo;
-    move_uploaded_file($_FILES['foto']['tmp_name'], $caminho);
+    move_uploaded_file($_FILES['foto']['name'], $caminho);
 }
 else {
     $caminho = $imgperil_padrao;
