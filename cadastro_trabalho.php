@@ -6,7 +6,7 @@
     <title>Cadastro de vaga</title>
     <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="reset.css">
-   <style>
+    <style>
         body {
             background-color: #ffffff;
             padding-top: 100px;
