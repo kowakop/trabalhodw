@@ -23,7 +23,6 @@
             header("Location: login.php");
             exit();
         } 
-
         header("Location: principal.php");
 
-    ?>
+?>

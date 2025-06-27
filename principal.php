@@ -85,6 +85,12 @@
                 flex-wrap:wrap;
             }
 
+            #global{
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+            }
         </style>
     </head>
 
@@ -103,43 +109,47 @@
 
         <!-- importado do bootstrap -->
         <!-- única parte responsiva desse site (╥﹏╥) -->
+         <?php
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100" style="width: 300px;">
-                    <img src="imagens/teste.jpeg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome</h5>
-                        <p class="card-text">Descrição da vaga</p>
-                        <a href="#" class="btn btn-light">Solicitar Vaga</a>
-                    </div>
-                </div>
-            </div>
+        require_once "conexao.php";
+
+        // SELECT * FROM tb_livro;
+        $sql = "SELECT * FROM vagas";
+        $comando = mysqli_prepare($conexao, $sql);
+
+        mysqli_stmt_execute($comando);
+
+        $resultados = mysqli_stmt_get_result($comando);
+
+        // echo $resultados;
+        // print_r($resultados);
+
+        echo"<div id='global'>";
+        while ($area = mysqli_fetch_assoc($resultados)) {
+            $nome = $area['vagas_nome'];
+            $descricao = $area['vagas_descricao'];
+            
+
+            // essa parada aqui mermão, não ta encontrando o nome e descrição, n era pra isso acontecer não
+            echo "<div class='row row-cols-1 row-cols-md-3 g-4'>";
+            echo "  <div class='col'>";
+            echo "      <div class='card h-100' style='width: 300px;'>";
+            echo "          <img src='imagens/teste.jpeg' class='card-img-top'>";
+            echo "          <div class='card-body'>";
+            echo "              <h5 class='card-title'>$nome</h5>";
+            echo "              <p class='card-text'>$descricao</p>";
+            echo "              <a href='#' class='btn btn-light'>Solicitar Vaga</a>";
+            echo "          </div>";
+            echo "      </div>";
+            echo "  </div>";
+            echo "</div>";
 
 
-            <div class="col">
-                <div class="card h-100" style="width: 300px;">
-                    <img src="imagens/teste.jpeg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome</h5>
-                        <p class="card-text">Descrição da Vaga</p>
-                        <a href="#" class="btn btn-light">Solicitar Vaga</a>
-                    </div>
-                </div>
-            </div>
+        }
+        echo"</div>";
 
 
-            <div class="col">
-                <div class="card h-100" style="width: 300px;">
-                    <img src="imagens/teste.jpeg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Nome</h5>
-                        <p class="card-text">Descrição da Vaga</p>
-                        <a href="#" class="btn btn-light">Solicitar Vaga</a>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
+        mysqli_stmt_close($comando);    
+    ?>
     </body>
 </html>
